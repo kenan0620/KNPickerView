@@ -10,7 +10,7 @@
 
 @interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (nonatomic, copy) UIButton *pickerBtn;
+@property (nonatomic, strong) UIButton *pickerBtn;
 @property (nonatomic, strong) NSArray *dataList;
 
 @property (nonatomic, strong) NSArray *proTimeList;
@@ -19,8 +19,9 @@
 @property (nonatomic, strong) NSString *proNameStr;
 @property (nonatomic, strong) NSString *proTimeStr;
 
-@property (nonatomic, copy) UIPickerView *pickerView;
+@property (nonatomic, strong) UIPickerView *pickerView;
 
+@property (nonatomic, strong) UIImageView *mainImageView;
 @end
 
 @implementation ViewController
@@ -29,14 +30,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _proTimeList = [[NSArray alloc]initWithObjects:@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"9",@"10",nil];
-    _proTitleList = [[NSArray alloc]initWithObjects:@"1元",@"2元",@"3元",@"4元",@"5元",nil];
-    _pickerBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    _pickerBtn.frame=CGRectMake(10, 100, self.view.bounds.size.width-20, 50);
-    _pickerBtn.backgroundColor=[UIColor yellowColor];
-    [_pickerBtn addTarget:self action:@selector(dataPicker) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_pickerBtn];
+//    _proTimeList = [[NSArray alloc]initWithObjects:@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"9",@"10",nil];
+//    _proTitleList = [[NSArray alloc]initWithObjects:@"1元",@"2元",@"3元",@"4元",@"5元",nil];
+//    _pickerBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+//    _pickerBtn.frame=CGRectMake(10, 100, self.view.bounds.size.width-20, 50);
+//    _pickerBtn.backgroundColor=[UIColor yellowColor];
+//    [_pickerBtn addTarget:self action:@selector(dataPicker) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:_pickerBtn];
+    self.mainImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:self.mainImageView];
+    [self gaosimohu];
 }
+
+-(void)gaosimohu
+{
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"1.png"]];
+    // create gaussian blur filter
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [filter setValue:inputImage forKey:kCIInputImageKey];
+    [filter setValue:[NSNumber numberWithFloat:10.0] forKey:@"inputRadius"];
+    // blur image
+    CIImage *result = [filter valueForKey:kCIOutputImageKey];
+    CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
+    UIImage *image = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    self.mainImageView.image = image;
+}
+
 
 -(void)dataPicker
 {
