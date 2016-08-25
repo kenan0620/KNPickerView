@@ -15,7 +15,6 @@
 		6EF3A8B21D6E9A6600A69803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF3A8B01D6E9A6600A69803 /* LaunchScreen.storyboard */; };
 		6EF3A8BD1D6E9A6600A69803 /* KNPickerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF3A8BC1D6E9A6600A69803 /* KNPickerViewTests.m */; };
 		6EF3A8C81D6E9A6600A69803 /* KNPickerViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF3A8C71D6E9A6600A69803 /* KNPickerViewUITests.m */; };
-		6EF3A8D61D6EA54E00A69803 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF3A8D51D6EA54E00A69803 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		6EF3A8C31D6E9A6600A69803 /* KNPickerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KNPickerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF3A8C71D6E9A6600A69803 /* KNPickerViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNPickerViewUITests.m; sourceTree = "<group>"; };
 		6EF3A8C91D6E9A6600A69803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EF3A8D51D6EA54E00A69803 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 				6EF3A8A61D6E9A6600A69803 /* AppDelegate.m */,
 				6EF3A8A81D6E9A6600A69803 /* ViewController.h */,
 				6EF3A8A91D6E9A6600A69803 /* ViewController.m */,
-				6EF3A8D51D6EA54E00A69803 /* 1.png */,
 				6EF3A8AB1D6E9A6600A69803 /* Main.storyboard */,
 				6EF3A8AE1D6E9A6600A69803 /* Assets.xcassets */,
 				6EF3A8B01D6E9A6600A69803 /* LaunchScreen.storyboard */,
@@ -247,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EF3A8B21D6E9A6600A69803 /* LaunchScreen.storyboard in Resources */,
-				6EF3A8D61D6EA54E00A69803 /* 1.png in Resources */,
 				6EF3A8AF1D6E9A6600A69803 /* Assets.xcassets in Resources */,
 				6EF3A8AD1D6E9A6600A69803 /* Main.storyboard in Resources */,
 			);
